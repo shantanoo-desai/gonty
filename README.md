@@ -53,5 +53,5 @@ And be Amazed!!
 
 ## Pending Tasks
 
-- [] Use a GitHub Actions Workflow to Containerize it
-- [] Deploy it locally using Kubernetes
+- [ ] Use a GitHub Actions Workflow to Containerize it
+- [ ] Deploy it locally using Kubernetes
