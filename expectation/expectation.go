@@ -1,12 +1,14 @@
 package expectation
 
-type Expectation struct {
+type expectation struct {
 	Who       string
 	Expecting bool
 	Weapons   []string
 }
 
-var NeverExpected = Expectation{
+// You can Never Expect them! Never!
+// *Intense Music*
+var NeverExpected = expectation{
 	Who:       "Spanish Inquisition",
 	Expecting: false,
 	Weapons: []string{

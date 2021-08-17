@@ -9,11 +9,11 @@ import (
 )
 
 var (
-	composer_mock      string = `{"Name":"Johann Gambolputty","FamilyName":["de von Ausfern","schplenden","schlitter","crasscrenbon","fried","digger","dingle","dangle","dongle","dungle","burstein","von","knacker","thrasher","apple","banger","horowitz","ticolensic","grander","knotty","spelltinkle","grandlich","grumblemeyer","spelterwasser","kurstlich","himbleeisen","bahnwagen","gutenabend","bitte","ein","nürnburger","bratwustle","gerspurten","mitzweimache","luber","hundsfut","gumberaber","shönendanker","kalbsfleisch","mittler","aucher von Hautkopft of Ulm"],"Genre":"Baroque","Nationality":"German"}`
-	jokes_mock         string = `[{"Delivery":"Wenn ist das Nunstück git und Slotermeyer? Ja! Beiherhund das Oder die Flipperwaldt gersput!","Deadly":true,"Language":"German"},{"Delivery":"There were zwei [two] peanuts walking down der strasse [street]. Und one was assaulted... peanut!","Deadly":false,"Language":"English"}]`
-	funniest_joke_mock string = `{"Delivery":"Wenn ist das Nunstück git und Slotermeyer? Ja! Beiherhund das Oder die Flipperwaldt gersput!","Deadly":true,"Language":"German"}`
-	expect_mock        string = `{"Who":"Spanish Inquisition","Expecting":false,"Weapons":["fear","surprise","ruthless efficiency","fanatical devotion to the pope","nice red uniforms"]}`
-	nobleman_mock      string = `{"Name":"Biggus","FamilyName":"Dickus","Empire":"Roman","RelatedTo":[{"Name":"Pontius","FamilyName":"Pilate","Empire":"Roman","RelatedTo":[{"Name":"Julius","FamilyName":"Caesar","Empire":"Roman","RelatedTo":null}]},{"Name":"Incontinetia","FamilyName":"Buttocks","Empire":"Roman","RelatedTo":null}]}`
+	composerMock      string = `{"Name":"Johann Gambolputty","FamilyName":["de von Ausfern","schplenden","schlitter","crasscrenbon","fried","digger","dingle","dangle","dongle","dungle","burstein","von","knacker","thrasher","apple","banger","horowitz","ticolensic","grander","knotty","spelltinkle","grandlich","grumblemeyer","spelterwasser","kurstlich","himbleeisen","bahnwagen","gutenabend","bitte","ein","nürnburger","bratwustle","gerspurten","mitzweimache","luber","hundsfut","gumberaber","shönendanker","kalbsfleisch","mittler","aucher von Hautkopft of Ulm"],"Genre":"Baroque","Nationality":"German"}`
+	jokesMock         string = `[{"Delivery":"Wenn ist das Nunstück git und Slotermeyer? Ja! Beiherhund das Oder die Flipperwaldt gersput!","Deadly":true,"Language":"German"},{"Delivery":"There were zwei [two] peanuts walking down der strasse [street]. Und one was assaulted... peanut!","Deadly":false,"Language":"English"}]`
+	funniestJokeMock string = `{"Delivery":"Wenn ist das Nunstück git und Slotermeyer? Ja! Beiherhund das Oder die Flipperwaldt gersput!","Deadly":true,"Language":"German"}`
+	expectMock        string = `{"Who":"Spanish Inquisition","Expecting":false,"Weapons":["fear","surprise","ruthless efficiency","fanatical devotion to the pope","nice red uniforms"]}`
+	noblemanMock      string = `{"Name":"Biggus","FamilyName":"Dickus","Empire":"Roman","RelatedTo":[{"Name":"Pontius","FamilyName":"Pilate","Empire":"Roman","RelatedTo":[{"Name":"Julius","FamilyName":"Caesar","Empire":"Roman","RelatedTo":null}]},{"Name":"Incontinetia","FamilyName":"Buttocks","Empire":"Roman","RelatedTo":null}]}`
 )
 
 var router = setupRouter()
@@ -43,7 +43,7 @@ func TestComposerOK(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
-	assert.Equal(t, composer_mock, w.Body.String())
+	assert.Equal(t, composerMock, w.Body.String())
 }
 
 func TestComposerNotFound(t *testing.T) {
@@ -70,7 +70,7 @@ func TestAllJokes(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
-	assert.Equal(t, jokes_mock, w.Body.String())
+	assert.Equal(t, jokesMock, w.Body.String())
 }
 
 func TestFunniestJoke(t *testing.T) {
@@ -83,7 +83,7 @@ func TestFunniestJoke(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
-	assert.Equal(t, funniest_joke_mock, w.Body.String())
+	assert.Equal(t, funniestJokeMock, w.Body.String())
 }
 
 func TestExpect(t *testing.T) {
@@ -95,7 +95,7 @@ func TestExpect(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
-	assert.Equal(t, expect_mock, w.Body.String())
+	assert.Equal(t, expectMock, w.Body.String())
 }
 
 func TestNobleman(t *testing.T) {
@@ -107,5 +107,5 @@ func TestNobleman(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
-	assert.Equal(t, nobleman_mock, w.Body.String())
+	assert.Equal(t, noblemanMock, w.Body.String())
 }

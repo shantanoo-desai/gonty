@@ -7,7 +7,7 @@ type Joke struct {
 	Language string
 }
 
-// Two of the Funniest (and one Deadly) Jokes in the World
+// Jokes :Two of the Funniest (and one Deadly) Jokes in the World
 var Jokes = []Joke{
 	{
 		Delivery: "Wenn ist das Nunstück git und Slotermeyer? Ja! Beiherhund das Oder die Flipperwaldt gersput!",
